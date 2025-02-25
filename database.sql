@@ -1,0 +1,38 @@
+-- -- Table for Blood Donors
+-- CREATE TABLE BloodDonor (
+--     donor_id INTEGER PRIMARY KEY AUTOINCREMENT,
+--     username TEXT UNIQUE NOT NULL,
+--     password TEXT NOT NULL,
+--     name TEXT NOT NULL,
+--     contact TEXT NOT NULL,
+--     area TEXT NOT NULL,
+--     city TEXT NOT NULL,
+--     state TEXT NOT NULL,
+--     blood_type TEXT NOT NULL CHECK (blood_type IN ('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-')),
+--     last_donation_date DATE,
+--     health_status TEXT CHECK (health_status IN ('Healthy', 'Unfit', 'Recovering')),
+--     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+
+-- -- Table for Blood Banks
+-- CREATE TABLE BloodBank (
+--     bank_id INTEGER PRIMARY KEY AUTOINCREMENT,
+--     username TEXT UNIQUE NOT NULL,
+--     password TEXT NOT NULL,
+--     name TEXT NOT NULL,
+--     contact TEXT NOT NULL,
+--     area TEXT NOT NULL,
+--     city TEXT NOT NULL,
+--     state TEXT NOT NULL,
+--     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+
+-- -- Table for Blood Inventory
+-- CREATE TABLE BloodInventory (
+--     inventory_id INTEGER PRIMARY KEY AUTOINCREMENT,
+--     bank_id INTEGER NOT NULL,
+--     blood_type TEXT NOT NULL CHECK (blood_type IN ('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-')),
+--     quantity INTEGER NOT NULL CHECK (quantity >= 0),
+--     last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--     FOREIGN KEY (bank_id) REFERENCES BloodBank(bank_id) ON DELETE CASCADE
+-- );
