@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <body>
+    <%- include('partials/header') %>
 
-    <h1>Welcome, <%= donor.name %>!</h1>
+    <h1>Welcome, <%= donor.name %>!</h1>
 
-    <p><strong>Donor ID:</strong> <%= donor.donor_id %></p>
-    <p><strong>Blood Group:</strong> <%= donor.blood_group %></p>
-    <p><strong>Age:</strong> <%= donor.age %></p>
-    <p><strong>Gender:</strong> <%= donor.gender %></p>
-    <p><strong>Last Donation Date:</strong> <%= donor.last_donation_date || "N/A" %></p>
+    <p><strong>Donor ID:</strong> <%= donor.donor_id %></p>
+    <p><strong>Blood Group:</strong> <%= donor.blood_group %></p>
+    <p><strong>Age:</strong> <%= donor.age %></p>
+    <p><strong>Gender:</strong> <%= donor.gender %></p>
+    <p><strong>Last Donation Date:</strong> <%= donor.last_donation_date || "N/A" %></p>
 
-    <nav>
-        <a href="/">Home</a> |
-        <a href="/find-donor/">Find Donor</a> |
-        <a href="/logout">Logout</a>
-    </nav>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/find-donor">Find Donor</a> |
+        <a href="/logout">Logout</a>
+    </nav>
 
+    <script src="/js/dashboard.js"></script>
 </body>
 </html>
